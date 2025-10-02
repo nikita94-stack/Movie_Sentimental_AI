@@ -279,6 +279,7 @@ st.markdown("""
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    animation: float 3s ease-in-out infinite; /* floating effect */
 }
     .feature-card:nth-child(1) { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); animation-delay: 0s;}
     .feature-card:nth-child(2) { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); animation-delay: 0.5s;}
@@ -587,3 +588,4 @@ with cta2:
         st.balloons()
         st.success("🚀 Loading complete dashboard...")
         st.snow()
+
