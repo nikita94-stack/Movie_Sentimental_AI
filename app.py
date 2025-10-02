@@ -243,22 +243,43 @@ st.markdown("""
     }
 
     /* Feature grid */
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns on large screens */
+    gap: 2rem;
+    margin: 3rem 0;
+    padding: 0 1rem; /* side padding for smaller devices */
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
     .feature-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-        gap: 2rem;
-        margin: 3rem 0;
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on medium-large */
     }
-    .feature-card {
-        padding: 2rem;
-        border-radius: 20px;
-        color: white;
-        text-align: center;
-        transition: all 0.3s ease;
-        cursor: pointer;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        animation: float 3s ease-in-out infinite;
+}
+
+@media (max-width: 900px) {
+    .feature-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
     }
+}
+
+@media (max-width: 600px) {
+    .feature-grid {
+        grid-template-columns: 1fr; /* 1 column on phones */
+    }
+}
+
+/* Feature cards */
+.feature-card {
+    padding: 1.5rem;  /* reduced padding for small screens */
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
     .feature-card:nth-child(1) { background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); animation-delay: 0s;}
     .feature-card:nth-child(2) { background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); animation-delay: 0.5s;}
     .feature-card:nth-child(3) { background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); animation-delay: 1s;}
